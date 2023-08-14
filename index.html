@@ -27,6 +27,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+<script>
+        // Function to send a request to the server and log the visitor IP
+        function logVisitorIP() {
+            const endpoint = '/log-ip.php'; // Replace this with your server-side endpoint
+
+            // Send a GET request to the server-side endpoint
+            fetch(endpoint)
+                .then(response => response.text())
+                .then(ip => {
+                    // Display the IP on the client-side (optional)
+                    console.log('Visitor IP:', ip);
+                })
+                .catch(error => {
+                    console.error('Error logging visitor IP:', error);
+                });
+        }
+
+        // Call the function to log the visitor IP when the page loads
+        logVisitorIP();
+    </script>
   </head>
   <body>
     <nav>
@@ -42,5 +62,8 @@
     <br />
     <i class="fa-solid fa-code" id="sig"></i>
     <script src="script.js"></script>
+    <footer>
+	<p>Your IP has been logged for optimsation purposes and will not be used unethically. Contact me if you would like to know more or remove your IP. Thank you</p>
+    </footer>
   </body>
 </html>
